@@ -3,79 +3,588 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/icons8-fast-cart-48.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Bejamas</title>
   </head>
   <body>
     <div class="container">
+      <!-- ================= Header ================= -->
+      <!-- Contains logo and cart button -->
       <header class="header">
-        <img src="/assets/images/logo.png" alt="Logo" class="header__logo" />
-        <img src="/assets/images/cart.png" alt="Cart" class="header__cart" />
+        <div class="header__logo-wrapper">
+          <img src="assets/images/logo.png" alt="Logo" class="header__logo" />
+        </div>
+        <!-- Cart button: opens/shows cart on desktop -->
+        <button type="button" class="header__cart-btn btn">
+          <img
+            src="assets/images/cart.png"
+            alt="Cart"
+            class="header__cart-img"
+          />
+          <p class="header__cart-quantity">1</p>
+        </button>
       </header>
+
+      <!-- ================= Main Content ================= -->
       <main class="main">
-        <section class="hero-section">
-          <h1 class="hero__title">Samurai King Resting</h1>
-          <div class="hero__img-wrapper">
-            <picture>
-              <source
-                media="(min-width: 1440px)"
-                srcset="/assets/images/bg-samurai-king.png"
-              />
-              <source
-                media="(max-width: 465px)"
-                srcset="/assets/images/samurai-king.png"
-              />
-              <img class="hero__img" src="/assets/images/samurai-king.png" />
-            </picture>
+        <!-- ========= Hero Section ========= -->
+        <section class="hero">
+          <!-- Hero header: title + desktop CTA -->
+          <div class="hero__header">
+            <h1 class="hero__title">Samurai King Resting</h1>
+            <button type="button" class="btn btn--dark hero__header-btn">
+              ADD TO CART
+            </button>
           </div>
-          <button class="btn hero__btn" type="submit">ADD TO CART</button>
+
+          <!-- Responsive picture element for hero image -->
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="/assets/images/bg-samurai-king.png"
+            />
+            <source
+              media="(max-width: 465px)"
+              srcset="/assets/images/samurai-king.png"
+            />
+            <img
+              class="hero__img"
+              src="/assets/images/samurai-king.png"
+              alt="Samurai King Resting"
+            />
+          </picture>
+
+          <!-- Mobile CTA (visible on smaller screens) -->
+          <button class="btn btn--dark hero__btn" type="button">
+            ADD TO CART
+          </button>
+
           <div class="hero__flex">
-            <div class="hero__flex-item">
-              <h2 class="hero__about-title">About the Samurai King Resting</h2>
-              <h3 class="hero__about-sub-title">Pets</h3>
-              <p class="hero__about-description">
-                So how did the classical Latin become so incoherent? According
-                to McClintock, a 15th century typesetter likely scrambled part
-                of Cicero's De Finibus in order to provide placeholder text to
-                mockup various fonts for a type specimen book.So how did the
-                classical Latin become so incoherent? According to McClintock, a
-                15th century typesetter likely scrambled part of Cicero's De
-                Finibus in order to provide placeholder
-              </p>
-              <p class="hero__about-description">
-                text to mockup various fonts for a type specimen book.So how did
-                the classical Latin become so incoherent? According to
-                McClintock.
-              </p>
-            </div>
-            <div class="hero__flex-item">
-              <h3 class="hero__trend-title">People also buy</h3>
-              <div class="trend__img-wrapper">
-                <img
-                  src="/assets/images/Rectangle 10.png"
-                  alt=""
-                  class="trend__img"
-                />
-                <img
-                  src="/assets/images/Rectangle 10.1.png"
-                  alt=""
-                  class="trend__img"
-                />
-                <img
-                  src="/assets/images/Rectangle 10.2.png"
-                  alt=""
-                  class="trend__img"
-                />
+            <!-- About + Trending grouped content -->
+            <div class="hero__content">
+              <div class="hero__about">
+                <h2 class="hero__about-title">
+                  About the Samurai King Resting
+                </h2>
+                <h3 class="hero__about-sub-title">Pets</h3>
+                <!-- Short description (mobile) -->
+                <p class="hero__about-description hero__about-description--sm">
+                  So how did the classical Latin become so incoherent? According
+                  to McClintock, a 15th century typesetter likely scrambled part
+                  of Cicero's De Finibus in order to provide placeholder text to
+                  mockup various fonts for a type specimen book.
+                </p>
+                <!-- Long description (desktop) -->
+                <p class="hero__about-description hero__about-description--lg">
+                  So how did the classical Latin become so incoherent? According
+                  to McClintock, a 15th century typesetter likely scrambled part
+                  of Cicero's De Finibus in order to provide placeholder text to
+                  mockup various fonts for a type specimen book.So how did the
+                  classical Latin become so incoherent? According to McClintock,
+                  a 15th century typesetter likely scrambled part of Cicero's De
+                  Finibus in order to provide placeholder
+                </p>
+                <p class="hero__about-description hero__about-description--lg">
+                  text to mockup various fonts for a type specimen book.So how
+                  did the classical Latin become so incoherent? According to
+                  McClintock.
+                </p>
               </div>
-              <div class="trend__meta-data">
-                <h3 class="trend__meta-data-title">Details</h3>
-                <p class="trend__img-pixel">Size: 1020 x 1020 pixel</p>
-                <p class="trend__img-size">Size: 15mb</p>
+
+              <!-- Trending / "People also buy" -->
+              <div class="trending">
+                <h3 class="trending__title">People also buy</h3>
+                <div class="trending__items">
+                  <img
+                    src="/assets/images/Rectangle 10.png"
+                    alt="Trending Item 1"
+                    class="trending__items-img"
+                  />
+                  <img
+                    src="/assets/images/Rectangle 10.1.png"
+                    alt="Trending Item 2"
+                    class="trending__items-img"
+                  />
+                  <img
+                    src="/assets/images/Rectangle 10.2.png"
+                    alt="Trending Item 3"
+                    class="trending__items-img"
+                  />
+                </div>
+                <div class="trending__items-meta-data">
+                  <h3 class="trending__items-sub-title">Details</h3>
+                  <p class="trending__items-pixel">size: 1020 x 1020 pixels</p>
+                  <p class="trending__items-size">File size: 15mb</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
+
+        <!-- ========= Products Section ========= -->
+        <section class="products">
+          <!-- Section header: title, sort, filter button -->
+          <div class="products__header">
+            <h2 class="products__title">
+              Photography/ <span class="products__type">Premium Photos</span>
+            </h2>
+            <p class="products__sort">
+              <img
+                class="products__sort-img"
+                src="/assets/images/sort-icon.png"
+                alt="Sort icon"
+              />
+              Sort By
+              <button class="btn products__sort-price-btn">
+                Price
+                <img
+                  class="products__sort-dropdown"
+                  src="/assets/images/dropdown-icon.png"
+                  alt="Dropdown arrow"
+                />
+              </button>
+            </p>
+            <!-- Mobile filter button -->
+            <button class="btn products__filter-btn">
+              <img
+                src="assets/images/filter.png"
+                alt="filter"
+                class="products__filter-img"
+              />
+            </button>
+          </div>
+
+          <!-- Products grid + sidebar -->
+          <div class="products__grid">
+            <!-- Desktop Sidebar Filters -->
+            <aside class="products__sidebar">
+              <!-- Category Filter -->
+              <fieldset class="products__fieldset products__filter-category">
+                <legend class="products__legend products__category-title">
+                  Category
+                </legend>
+                <label class="checkbox-label" for="people">
+                  <input
+                    id="people"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  People
+                </label>
+                <label class="checkbox-label" for="premium">
+                  <input
+                    id="premium"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  Premium
+                </label>
+                <label class="checkbox-label" for="pets">
+                  <input
+                    id="pets"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  Pets
+                </label>
+                <label class="checkbox-label" for="food">
+                  <input
+                    id="food"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  Food
+                </label>
+                <label class="checkbox-label" for="landmarks">
+                  <input
+                    id="landmarks"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  Landmarks
+                </label>
+                <label class="checkbox-label" for="cities">
+                  <input
+                    id="cities"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  Cities
+                </label>
+                <label class="checkbox-label" for="nature">
+                  <input
+                    id="nature"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="category"
+                  />
+                  Nature
+                </label>
+              </fieldset>
+
+              <!-- Price Range Filter -->
+              <fieldset class="products__fieldset products__filter-price">
+                <legend class="products__legend products__price-range-title">
+                  Price range
+                </legend>
+                <label class="checkbox-label" for="less-than-20">
+                  <input
+                    id="less-than-20"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="price-range"
+                  />
+                  Lower than $20
+                </label>
+                <label class="checkbox-label" for="20-to-100">
+                  <input
+                    id="20-to-100"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="price-range"
+                  />
+                  $20 - $100
+                </label>
+                <label class="checkbox-label" for="100-to-200">
+                  <input
+                    id="100-to-200"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="price-range"
+                  />
+                  $100 - $200
+                </label>
+                <label class="checkbox-label" for="more-than-200">
+                  <input
+                    id="more-than-200"
+                    class="checkbox-field"
+                    type="checkbox"
+                    name="price-range"
+                  />
+                  More than $200
+                </label>
+              </fieldset>
+            </aside>
+
+            <!-- Products Content -->
+            <div class="products__content">
+              <ul class="products__list">
+                <li class="products__item">
+                  <p class="products__best-seller-label">Best Seller</p>
+                  <img
+                    src="/assets/images/Rectangle 2.png"
+                    alt="Red Bench"
+                    class="products__item-img"
+                  />
+                  <button
+                    class="btn btn--dark products__item-btn"
+                    type="button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 class="products__item-category">People</h3>
+                  <h4 class="products__item-name">Red Bench</h4>
+                  <p class="products__item-price">$3.89</p>
+                </li>
+                <li
+                  class="products__item products__item--food egg-balloon-item"
+                >
+                  <img
+                    src="/assets/images/Rectangle 2.1.png"
+                    alt="Egg Balloon"
+                    class="products__item-img"
+                  />
+                  <button
+                    class="btn btn--dark products__item-btn"
+                    type="button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 class="products__item-category">Food</h3>
+                  <h4 class="products__item-name">Egg Balloon</h4>
+                  <p class="products__item-price">$93.89</p>
+                </li>
+                <!-- Products Item duplicate -->
+                <li
+                  class="products__item products__item--food products__item--duplicate"
+                >
+                  <img
+                    src="/assets/images/Rectangle 2.1.png"
+                    alt="Egg Balloon"
+                    class="products__item-img"
+                  />
+                  <button
+                    class="btn btn--dark products__item-btn"
+                    type="button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 class="products__item-category">Food</h3>
+                  <h4 class="products__item-name">Egg Balloon</h4>
+                  <p class="products__item-price">$93.89</p>
+                </li>
+                <li class="products__item products__item--people">
+                  <img
+                    src="/assets/images/Rectangle 2.4.png"
+                    alt="Man"
+                    class="products__item-img"
+                  />
+                  <button
+                    class="btn btn--dark products__item-btn"
+                    type="button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 class="products__item-category">People</h3>
+                  <h4 class="products__item-name">Man</h4>
+                  <p class="products__item-price">$100.00</p>
+                </li>
+                <li class="products__item products__item--landmarks">
+                  <img
+                    src="/assets/images/Rectangle 2.5.png"
+                    alt="Architecture"
+                    class="products__item-img"
+                  />
+                  <button
+                    class="btn btn--dark products__item-btn"
+                    type="button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 class="products__item-category">Landmarks</h3>
+                  <h4 class="products__item-name">Architecture</h4>
+                  <p class="products__item-price">$101.00</p>
+                </li>
+                <!-- Products Item duplicate -->
+
+                <li class="products__item products__item--duplicate">
+                  <img
+                    src="/assets/images/Rectangle 2.5.png"
+                    alt="Architecture"
+                    class="products__item-img"
+                  />
+                  <button
+                    class="btn btn--dark products__item-btn"
+                    type="button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 class="products__item-category">Landmarks</h3>
+                  <h4 class="products__item-name">Architecture</h4>
+                  <p class="products__item-price">$101.00</p>
+                </li>
+              </ul>
+
+              <!-- Pagination -->
+              <nav class="pagination" aria-label="Pagination">
+                <button class="btn pagination__btn">
+                  <img
+                    class="pagination__arrow-img"
+                    src="/assets/images/Vector 1.png"
+                    alt="Previous page"
+                  />
+                </button>
+                <button class="btn pagination__btn">1</button>
+                <button class="btn pagination__btn">2</button>
+                <button
+                  class="btn pagination__btn pagination__btn--active"
+                  aria-current="page"
+                >
+                  3
+                </button>
+                <button class="btn pagination__btn">4</button>
+                <button class="btn pagination__btn">
+                  <img
+                    class="pagination__arrow-img"
+                    src="/assets/images/Vector 2.png"
+                    alt="Next page"
+                  />
+                </button>
+              </nav>
+            </div>
+          </div>
+
+          <!-- filter section for small screen -->
+          <dialog class="filter__dialog">
+            <!-- Dialog header -->
+            <div class="filter__dialog-header">
+              <h2 class="filter__title">Filter</h2>
+              <!-- Close dialog button (JS should hook to .filter__close-btn) -->
+              <button class="btn filter__close-btn" aria-label="Close Filter">
+                X
+              </button>
+            </div>
+
+            <!-- Filter form: scrollable area defined by CSS (.filter__form-checkbox) -->
+            <form class="products__filter-form">
+              <!-- Category Filter -->
+              <div class="filter__form-checkbox">
+                <fieldset class="products__fieldset products__filter-category">
+                  <legend class="products__legend products__category-title">
+                    Category
+                  </legend>
+                  <label class="checkbox-label" for="people-dialog">
+                    <input
+                      id="people-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    People
+                  </label>
+                  <label class="checkbox-label" for="premium-dialog">
+                    <input
+                      id="premium-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    Premium
+                  </label>
+                  <label class="checkbox-label" for="pets-dialog">
+                    <input
+                      id="pets-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    Pets
+                  </label>
+                  <label class="checkbox-label" for="food-dialog">
+                    <input
+                      id="food-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    Food
+                  </label>
+                  <label class="checkbox-label" for="landmarks-dialog">
+                    <input
+                      id="landmarks-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    Landmarks
+                  </label>
+                  <label class="checkbox-label" for="cities-dialog">
+                    <input
+                      id="cities-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    Cities
+                  </label>
+                  <label class="checkbox-label" for="nature-dialog">
+                    <input
+                      id="nature-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="category"
+                    />
+                    Nature
+                  </label>
+                </fieldset>
+
+                <!-- Price Range Filter -->
+                <fieldset class="products__fieldset products__filter-price">
+                  <legend class="products__legend products__price-range-title">
+                    Price range
+                  </legend>
+                  <label class="checkbox-label" for="less-than-20-dialog">
+                    <input
+                      id="less-than-20-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="price-range"
+                    />
+                    Lower than $20
+                  </label>
+                  <label class="checkbox-label" for="20-to-100-dialog">
+                    <input
+                      id="20-to-100-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="price-range"
+                    />
+                    $20 - $100
+                  </label>
+                  <label class="checkbox-label" for="100-to-200-dialog">
+                    <input
+                      id="100-to-200-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="price-range"
+                    />
+                    $100 - $200
+                  </label>
+                  <label class="checkbox-label" for="more-than-200-dialog">
+                    <input
+                      id="more-than-200-dialog"
+                      class="checkbox-field"
+                      type="checkbox"
+                      name="price-range"
+                    />
+                    More than $200
+                  </label>
+                </fieldset>
+              </div>
+
+              <!-- Dialog footer: clear & save -->
+              <div class="form__btns">
+                <button
+                  class="btn filter__form-btn filter__clear-btn"
+                  type="button"
+                >
+                  Clear
+                </button>
+                <button
+                  class="btn btn--dark filter__form-btn filter__save-btn"
+                  type="button"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </dialog>
+        </section>
+
+        <!-- ========= Cart ========= -->
+        <div class="cart">
+          <div class="cart__btn-wrapper">
+            <button class="btn cart__close-btn" aria-label="Close Cart">
+              X
+            </button>
+          </div>
+          <div class="cart__item">
+            <div class="cart__item-info">
+              <h3 class="cart__item-title">Samurai King Resting</h3>
+              <p class="cart__item-price">$10000.00</p>
+            </div>
+            <img
+              src="/assets/images/pexels-evgeny-tchebotarev-2187304 (1) 2.png"
+              alt="Samurai King"
+              class="cart__item-img"
+            />
+          </div>
+          <button type="button" class="btn cart__clear-btn">Clear</button>
+        </div>
       </main>
     </div>
+    <!-- Main script: attach events and behavior in index.js -->
+    <script src="index.js"></script>
   </body>
 </html>
